@@ -3,7 +3,7 @@ import { render } from './index.js';
 export default function createStore(reducer) {
   let state;
 
-  function dispatch(action) {
+  const dispatch = (action) => {
     state = reducer(state, action);
     console.log(`the action is`);
     console.log(action);
@@ -17,7 +17,7 @@ export default function createStore(reducer) {
   }
 
   return {
-    dispatch, 
+    dispatch,
     getState
   };
 }
